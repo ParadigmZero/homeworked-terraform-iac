@@ -71,5 +71,5 @@ resource "aws_s3_object" "homeworked_images" {
   for_each     = fileset("objects/", "**/*.*")
   key          = each.value
   source       = "objects/${each.value}"
-  content_type = each.value
+  content_type = "image/png"
 }
