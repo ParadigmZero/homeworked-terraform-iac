@@ -12,7 +12,7 @@ Developed with Terraform 1.7.3.
 
 Guarantee compatibility with this version, or use another version at your discretion. Author likes `tfenv` ( >https://github.com/tfutils/tfenv> ) as a tool to manage and use Terraform version.
 
-Example setup using brew package manager ( <brew.sh> ) - MacOs, Linux or Windows WSL:
+Example setup using brew package manager ( <https://brew.sh> ) - MacOs, Linux or Windows WSL:
 
 `brew install tfenv`
 

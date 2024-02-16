@@ -8,18 +8,20 @@ terraform {
 }
 
 provider "aws" {
-    region = "${var.region}"
-    shared_config_files = ["$HOME/.aws/config " ]
-    shared_credentials_files = ["$HOME/.aws/credentials"]
+  region                   = var.region
+  shared_config_files      = ["$HOME/.aws/config "]
+  shared_credentials_files = ["$HOME/.aws/credentials"]
 }
 
 resource "aws_s3_bucket" "homeworked_bucket" {
-    bucket = "${var.bucket_name}"
+  bucket = var.bucket_name
+  tags = {
+    Name = "homeworked"
+  }
 }
 
 resource "aws_s3_bucket_policy" "homeworked_bucket_policy" {
   bucket = aws_s3_bucket.homeworked_bucket.id
-
   policy = <<EOF
 {
     "Version": "2012-10-17",
@@ -51,9 +53,12 @@ resource "aws_s3_bucket_cors_configuration" "example" {
 }
 
 resource "aws_s3_object" "homeworked_images" {
-  bucket = aws_s3_bucket.homeworked_bucket.id
-  for_each = fileset("assets/", "**/*.*")
-  key = each.value
-  source = "assets/${each.value}"
+  tags = {
+    Name = "homeworked"
+  }
+  bucket       = aws_s3_bucket.homeworked_bucket.id
+  for_each     = fileset("objects/", "**/*.*")
+  key          = each.value
+  source       = "objects/${each.value}"
   content_type = each.value
 }
