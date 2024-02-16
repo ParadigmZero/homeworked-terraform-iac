@@ -21,6 +21,6 @@ resource "aws_s3_object" "images" {
   bucket = aws_s3_bucket.homeworked-bucket.id
   for_each = fileset("assets/", "**/*.*")
   key = each.value
-  source = "assets/${}"
+  source = "assets/${each.value}"
   content_type = each.value
 }
