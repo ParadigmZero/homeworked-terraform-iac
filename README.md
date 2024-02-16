@@ -30,6 +30,10 @@ Configure AWS, you will need to provide the `AWS Access Key ID` which you will b
 
 `aws configure`
 
+# Developer notes
+
+Note that all "objects" are PNG images in this repository. As such I have set the mime type manually in ( content_type = "image/png" ). If wanting to use other non-PNG image types .etc, may need to add additional logic.
+
 # Initialize
 
 Initialize (first time only): 
