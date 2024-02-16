@@ -12,10 +12,6 @@ Then:
 
 `tfenv use`
 
-# TO DO
-
-Proper bucket permissions, CORS, appropriate to the HomeWorked project .etc
-
 # AWS CLI
 
 Setup also assumes you have the `awscli` installed, based on the config and credentials files. If you have these files in the correct format, you could probably do without having the cli installed, however you may as well just install it, as overall it's simpler and quicker then trying to mimic the config files yourself. Again this can be installed from the brew package manager, or some other trusted package manager, or directly from Amazon. Example:

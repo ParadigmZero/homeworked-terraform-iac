@@ -1,7 +1,7 @@
 variable "bucket_name" {
   description = "S3 bucket name for HomeWorked"
   type = string
-  default = "homeworked2"
+  default = "homeworked"
 }
 
 variable "region" {
