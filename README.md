@@ -1,8 +1,16 @@
+S3 bucket configuration (infrastructure as code with Terraform) for the HomeWorked project see:
+
+Frontend:
+<https://github.com/ParadigmZero/HomeWorkedFrontend>
+Backend:
+<https://github.com/ParadigmZero/HomeWorkedBackend>
+
+
 # Terraform installation
 
 Developed with Terraform 1.7.3.
 
-Guarantee compatibility with this version, or use another version at your discretion.
+Guarantee compatibility with this version, or use another version at your discretion. Author likes `tfenv` ( >https://github.com/tfutils/tfenv> ) as a tool to manage and use Terraform version.
 
 Example setup using brew package manager ( <brew.sh> ) - MacOs, Linux or Windows WSL:
 
