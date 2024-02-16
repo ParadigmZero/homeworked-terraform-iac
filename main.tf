@@ -49,7 +49,7 @@ resource "aws_s3_bucket_policy" "homeworked_bucket_policy" {
 EOF
 
 
-depends_on = [aws_s3_bucket_public_access_block.h]
+depends_on = [aws_s3_bucket_public_access_block.homeworked_bucket_public_access]
 }
 
 resource "aws_s3_bucket_cors_configuration" "example" {
