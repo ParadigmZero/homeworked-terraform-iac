@@ -20,6 +20,15 @@ resource "aws_s3_bucket" "homeworked_bucket" {
   }
 }
 
+resource "aws_s3_bucket_public_access_block" "homeworked_bucket_public_access" {
+  bucket = aws_s3_bucket.homeworked_bucket.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
 resource "aws_s3_bucket_policy" "homeworked_bucket_policy" {
   bucket = aws_s3_bucket.homeworked_bucket.id
   policy = <<EOF
@@ -27,7 +36,6 @@ resource "aws_s3_bucket_policy" "homeworked_bucket_policy" {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "",
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:*",
@@ -39,6 +47,9 @@ resource "aws_s3_bucket_policy" "homeworked_bucket_policy" {
     ]
 }
 EOF
+
+
+depends_on = [aws_s3_bucket_public_access_block.h]
 }
 
 resource "aws_s3_bucket_cors_configuration" "example" {
